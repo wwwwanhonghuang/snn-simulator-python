@@ -1,5 +1,6 @@
 from snn_lib.connections.base_connection import AbstractConnection
 import numpy as np
+# Don't use this class. Deprecated.
 
 class FullConnection(AbstractConnection):
     def __init__(self, N_in, N_out, initW = None):
