@@ -46,11 +46,11 @@ An example of how to use the simulator is included in [`example.ipynb`](./exampl
 - Refactor the recording mechanism for better efficiency.
 - Implement simulation parallelization.
 - Add distributed computing support, including:
-  - Network partitioning
+  - Network partitioning (include partitioning optimization algorithms)
   - Code generation and optimization
   - Partition-to-device mapping
 
 ---
 
 ## 📌 Note
-For high-performance applications, consider using other frameworks like BindsNET, Brian2, or NEST. However, this simulator serves as a great learning tool for understanding the internals of SNNs.
+For high-performance applications, consider using other frameworks like spikingjelly, SpiNNaker, SpikBindsNET, Brian2, or NEST. However, this simulator serves as a learning tool for understanding the internals of SNNs.
