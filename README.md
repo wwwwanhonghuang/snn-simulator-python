@@ -1,31 +1,56 @@
-This repository provide an implementation of spiking neural network simulator in pure python.
-The example usage is provided in the `example.ipynb` in the root of this repository.
+# Spiking Neural Network Simulator (Pure Python)
 
-Currently follow functions or modules are implemented:
-1. Neuro Models
-+ **LIF neuron**: A classical leaky-and-fire neuron model.
-+ **Fixed spike train neuron**: A kind of neuron that emit spikes according to pre-specified spike train.
-+ **Hodgkin-Huxley neuron**: A classical Hodgkin-Huxley neuron model.
-+ **Izhikevich neuron**: A classical Izhikevich neuron model.
-+ **Possion point process models**
+This repository provides a pure Python implementation of a spiking neural network (SNN) simulator.
 
-2. Plot Utilities
+An example of how to use the simulator is included in [`example.ipynb`](./example.ipynb) in the root directory.
 
-3. Synapse Models
-+ **Exponential synapse models**: Single-exponential synapse and double-exponential synapse models are implemented.
-+ **Delay connection model**
+---
 
-4. Connections 
-+ **All-to-all connection**: connect two neuron populations in an all-to-all way.
-+ **One-to-one connection**: i-th neuron of pre-synapse neuron population is connect to i-th post-synapse neuron population.
-+ **Possibility connection**: neuron are connected randomly with a specified probability.
-+ **Custom connection**: connect pre-post neurons in a custom way, with specifying the connection edges.
+## ✅ Implemented Modules and Functions
 
-5. Network Building
-A network builder is provided to build a network instance.
+### 1. Neuron Models
+- **LIF Neuron**: Classical leaky integrate-and-fire model.
+- **Fixed Spike Train Neuron**: Emits spikes based on a predefined spike train.
+- **Hodgkin-Huxley Neuron**: Classical Hodgkin-Huxley model.
+- **Izhikevich Neuron**: Classical Izhikevich model.
+- **Poisson Process Neuron**: Emits spikes according to a Poisson process.
 
-6. Monitor
-A simulator monitor class is provided to fine-grain record necessary information in the information, and can be accessed in the simulation. 
+### 2. Plotting Utilities
+- Basic tools to visualize spike trains, membrane potentials, etc.
 
-Currently, the training of network is by recording presudo-gradient utilize the monitor, and 
-access the these gradient in the simulation to perform gradient-desending-based optimization.
+### 3. Synapse Models
+- **Exponential Synapse Models**: Supports single and double exponential decay.
+- **Delay Connection Model**: Introduces synaptic transmission delay.
+
+### 4. Connection Schemes
+- **All-to-All**: Fully connects two neuron populations.
+- **One-to-One**: Connects the *i*-th neuron in the pre-synaptic group to the *i*-th in the post-synaptic group.
+- **Probabilistic Connection**: Connects neurons randomly with a specified probability.
+- **Custom Connection**: Allows user-defined connection patterns via edge lists.
+
+### 5. Network Building
+- A network builder is provided to easily instantiate and configure SNNs.
+
+### 6. Monitoring
+- Fine-grained monitor class for tracking states and gradients during simulation.
+- Enables pseudo-gradient recording for training via gradient descent.
+
+---
+
+## ⚠️ Limitations
+
+- This framework is **resource-consuming** and relatively slow due to its pure Python implementation.
+- Best suited for educational or prototyping purposes rather than high-performance applications.
+
+### 🛠 Future Improvements
+- Refactor the recording mechanism for better efficiency.
+- Implement simulation parallelization.
+- Add distributed computing support, including:
+  - Network partitioning
+  - Code generation and optimization
+  - Partition-to-device mapping
+
+---
+
+## 📌 Note
+For high-performance applications, consider using other frameworks like BindsNET, Brian2, or NEST. However, this simulator serves as a great learning tool for understanding the internals of SNNs.
