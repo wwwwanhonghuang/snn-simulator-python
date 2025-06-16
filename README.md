@@ -39,8 +39,8 @@ An example of how to use the simulator is included in [`example.ipynb`](./exampl
 
 ## ⚠️ Limitations
 
-- This framework is **resource-consuming** and relatively slow due to its pure Python implementation.
-- Best suited for educational or prototyping purposes rather than high-performance applications.
+- This framework is **resource-consuming** and relatively slow due to (1) the inefficiency recording and retreiving run-time states, (2) no computational optimizations, e.g., exploit parallelism.
+- Suited for educational or prototyping purposes rather than high-performance applications.
 
 ### 🛠 Future Improvements
 - Refactor the recording mechanism for better efficiency.
